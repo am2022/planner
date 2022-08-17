@@ -12,13 +12,14 @@ while b:
         b = False
 
     elif do == "-l":
-        print("               list:")
-        print("\n")
-
-        for i in todo:
-            print(i)
-
-        print("\n")
+        if todo == []:
+            print("\nthe list is empty!\n")
+        else:
+            print("               list:")
+            print("\n")
+            for i in todo:
+                print(i)
+            print("\n")
 
     else:
         todo.append(do)
