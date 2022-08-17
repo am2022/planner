@@ -1,5 +1,6 @@
 print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
+print("enter -del for delete all the list")
 
 todo = []
 
@@ -43,6 +44,13 @@ while b:
 
             if is_dwork_valid == True:
                 print("done!")
+
+    elif do == "-del":
+        if todo == []:
+            print("\nthe list is empty!\n")
+        else:
+            todo.clear()
+            print("done!")
 
     else:
         todo.append(do)
