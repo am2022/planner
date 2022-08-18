@@ -1,6 +1,7 @@
 print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
 print("enter -del for delete all the list || enter -numl for number of a work in the list")
+print("enter -count for count a work in list")
 
 todo = []
 
@@ -68,6 +69,15 @@ while b:
             if is_numl_valid:
                 numl += 1
                 print("the number of the work is in "+str(numl))
+
+    elif do == "-count":
+        if todo == []:
+            print("\nthe list is empty!\n")
+        else:
+            count_work = input("enter the work: ")
+            count = todo.count(count_work)
+
+            print("the number of "+count_work+" is "+str(count))
 
     else:
         todo.append(do)
