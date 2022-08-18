@@ -1,7 +1,7 @@
 print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
 print("enter -del for delete all the list || enter -numl for number of a work in the list")
-print("enter -count for count a work in list")
+print("enter -count for count a work in list || enter -sort for sort the list")
 
 todo = []
 
@@ -78,6 +78,18 @@ while b:
             count = todo.count(count_work)
 
             print("the number of "+count_work+" is "+str(count))
+
+    elif do == "-sort":
+        if todo == []:
+            print("\nthe list is empty!\n")
+        else:
+            print("1.sort as alphabet 2.revers")
+            sort_choice = input("enter the number of each item of the menu that you want: ")
+
+            if sort_choice=="1" or sort_choice=="sort as alphabet":
+                todo.sort()
+            elif sort_choice=="2" or sort_choice=="revers":
+                todo.reverse()
 
     else:
         todo.append(do)
