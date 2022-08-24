@@ -16,6 +16,10 @@ print("enter -del for delete all the list || enter -numl for number of a work in
 print("enter -count for count a work in list || enter -sort for sort the list")
 print("enter -clear for clear window")
 
+f = open("history "+str(year),"a")
+
+f.write(str(year)+" "+str(month)+" "+str(day)+"\n")
+
 todo = []
 
 b = True
@@ -109,3 +113,9 @@ while b:
 
     else:
         todo.append(do)
+        f.write(do+"\n")
+
+try:
+    f.close()
+except AttributeError:
+    print(" ")
