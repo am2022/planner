@@ -1,7 +1,12 @@
+import os
+
+os.system("cls")
+
 print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
 print("enter -del for delete all the list || enter -numl for number of a work in the list")
 print("enter -count for count a work in list || enter -sort for sort the list")
+print("enter -clear for clear window")
 
 todo = []
 
@@ -90,6 +95,9 @@ while b:
                 todo.sort()
             elif sort_choice=="2" or sort_choice=="revers":
                 todo.reverse()
+
+    elif do == "-clear":
+        os.system("cls")
 
     else:
         todo.append(do)
