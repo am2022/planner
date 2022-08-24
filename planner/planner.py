@@ -1,6 +1,14 @@
 import os
+import datetime
 
 os.system("cls")
+
+t = datetime.datetime.now()
+year = t.year
+month = t.month
+day = t.day
+
+print(str(day)+" "+str(month)+" "+str(year))
 
 print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
