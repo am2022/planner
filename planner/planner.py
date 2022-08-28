@@ -14,7 +14,7 @@ print("welcome to planner")
 print("enter -q for exit || enter -l for see list || enter -d for delete an item")
 print("enter -del for delete all the list || enter -numl for number of a work in the list")
 print("enter -count for count a work in list || enter -sort for sort the list")
-print("enter -clear for clear window")
+print("enter -clear for clear window || enter -hist for see history")
 
 f = open("history "+str(year),"a")
 
@@ -110,6 +110,22 @@ while b:
 
     elif do == "-clear":
         os.system("cls")
+
+    elif do == "-hist":
+        print("for month or day if you want to leave blank you can enter n")
+        u_year = int(input("enter the year that you want to see history: "))
+        u_month = input("enter the month: ")
+        u_day = input("enter the day: ")
+
+        if u_month == "n":
+            if u_day == "n":
+                f_hist = open("history "+str(year),"r")
+                print("\n")
+                print("               list:")
+
+                r = f_hist.read()
+                print(r)
+                f_hist.close()
 
     else:
         todo.append(do)
