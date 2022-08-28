@@ -112,8 +112,18 @@ while b:
         os.system("cls")
 
     elif do == "-hist":
+        u_year_true = True
+
         print("for month or day if you want to leave blank you can enter n")
-        u_year = int(input("enter the year that you want to see history: "))
+
+        while u_year_true:
+            try:
+                u_year = int(input("enter the year that you want to see history: "))
+                u_year_true = False
+            except:
+                print("you should enter year in number format!")
+                u_year_true = True
+
         u_month = input("enter the month: ")
         u_day = input("enter the day: ")
 
