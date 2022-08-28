@@ -130,12 +130,14 @@ while b:
         if u_month == "n":
             if u_day == "n":
                 f_hist = open("history "+str(year),"r")
-                print("\n")
-                print("               list:")
-
                 r = f_hist.read()
-                print(r)
                 f_hist.close()
+                if r == "":
+                    print("\nthe list is empty!\n")
+                else:
+                    print("\n")
+                    print("               list:")
+                    print(r)
 
     else:
         todo.append(do)
