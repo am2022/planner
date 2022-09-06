@@ -1,5 +1,7 @@
 import os
 import datetime
+from tqdm import tqdm
+import time
 
 os.system("cls")
 
@@ -15,6 +17,7 @@ print("enter -q for exit || enter -l for see list || enter -d for delete an item
 print("enter -del for delete all the list || enter -numl for number of a work in the list")
 print("enter -count for count a work in list || enter -sort for sort the list")
 print("enter -clear for clear window || enter -hist for see history")
+print("-re for set reminder")
 
 f = open("history "+str(year),"a")
 
@@ -138,6 +141,17 @@ while b:
                     print("\n")
                     print("               list:")
                     print(r)
+
+    elif do == "-re":
+        tw = input("enter the work: ")
+        f = input("enter the format of time, s:sec m:minut h:hour \n")
+        t = int(input("enter timer time: "))
+
+        if f == "s":
+            for i in tqdm(range(1, t+1)):
+                time.sleep(1)
+
+            print("it's the time of the do "+tw+" work")
 
     else:
         todo.append(do)
