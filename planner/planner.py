@@ -162,6 +162,14 @@ while b:
 
             print("it's the time of the do "+tw+" work")
 
+        elif f == "h":
+            t = int(input("enter timer time (in hour): "))
+
+            for i in tqdm(range(1, t*60*60+1)):
+                time.sleep(1)
+
+            print("it's the time of the do "+tw+" work")
+
     else:
         todo.append(do)
         f.write(do+"\n")
