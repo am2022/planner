@@ -145,10 +145,19 @@ while b:
     elif do == "-re":
         tw = input("enter the work: ")
         f = input("enter the format of time, s:sec m:minut h:hour \n")
-        t = int(input("enter timer time: "))
 
         if f == "s":
+            t = int(input("enter timer time (in second): "))
+
             for i in tqdm(range(1, t+1)):
+                time.sleep(1)
+
+            print("it's the time of the do "+tw+" work")
+
+        elif f == "m":
+            t = int(input("enter timer time (in minute): "))
+
+            for i in tqdm(range(1, t*60+1)):
                 time.sleep(1)
 
             print("it's the time of the do "+tw+" work")
