@@ -4,6 +4,22 @@ from tqdm import tqdm
 import time
 from sys import platform
 
+t = datetime.datetime.now()
+year = t.year
+month = t.month
+day = t.day
+
+def show_option(u_os, term_color = "3f"):
+    if u_os == "linux" or u_os == "osx":
+        print(str(day)+" "+str(month)+" "+str(year))
+
+        print("welcome to planner")
+        print("enter -q for exit || enter -l for see list || enter -d for delete an item")
+        print("enter -del for delete all the list || enter -numl for number of a work in the list")
+        print("enter -count for count a work in list || enter -sort for sort the list")
+        print("enter -clear for clear window || enter -hist for see history")
+        print("-re for set reminder")
+
 def set_os():
     if platform == "linux" or platform == "linux2":
         return "linux"
@@ -27,19 +43,7 @@ elif my_os == "win":
 else:
     os_system("clear")
 
-t = datetime.datetime.now()
-year = t.year
-month = t.month
-day = t.day
-
-print(str(day)+" "+str(month)+" "+str(year))
-
-print("welcome to planner")
-print("enter -q for exit || enter -l for see list || enter -d for delete an item")
-print("enter -del for delete all the list || enter -numl for number of a work in the list")
-print("enter -count for count a work in list || enter -sort for sort the list")
-print("enter -clear for clear window || enter -hist for see history")
-print("-re for set reminder")
+show_option(my_os)
 
 f = open("history "+str(year),"a")
 
