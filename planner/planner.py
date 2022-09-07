@@ -4,6 +4,7 @@ from tqdm import tqdm
 import time
 
 os.system("cls")
+os.system("color 3f")
 
 t = datetime.datetime.now()
 year = t.year
