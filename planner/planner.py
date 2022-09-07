@@ -20,6 +20,17 @@ def show_option(u_os, term_color = "3f"):
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder")
 
+    elif u_os == "win":
+        print(str(day)+" "+str(month)+" "+str(year))
+        os.system("color 3f")
+
+        print("welcome to planner")
+        print("enter -q for exit || enter -l for see list || enter -d for delete an item")
+        print("enter -del for delete all the list || enter -numl for number of a work in the list")
+        print("enter -count for count a work in list || enter -sort for sort the list")
+        print("enter -clear for clear window || enter -hist for see history")
+        print("-re for set reminder")
+
 def set_os():
     if platform == "linux" or platform == "linux2":
         return "linux"
@@ -38,7 +49,6 @@ if my_os == "linux" or my_os == "osx":
 
 elif my_os == "win":
     os.system("cls")
-    os.system("color 3f")
 
 else:
     os_system("clear")
