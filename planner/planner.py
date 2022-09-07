@@ -2,6 +2,19 @@ import os
 import datetime
 from tqdm import tqdm
 import time
+from sys import platform
+
+def set_os():
+    if platform == "linux" or platform == "linux2":
+        return "linux"
+
+    elif platform == "darwin":
+        return "osx"
+
+    elif platform == "win32":
+        return "win"
+
+my_os = set_os()
 
 os.system("cls")
 os.system("color 3f")
