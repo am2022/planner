@@ -16,8 +16,16 @@ def set_os():
 
 my_os = set_os()
 
-os.system("cls")
-os.system("color 3f")
+#os.system("cls")
+if my_os == "linux" or my_os == "osx":
+    os.system("clear")
+
+elif my_os == "win":
+    os.system("cls")
+    os.system("color 3f")
+
+else:
+    os_system("clear")
 
 t = datetime.datetime.now()
 year = t.year
