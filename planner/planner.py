@@ -207,14 +207,18 @@ while b:
             print("it's the time of the do "+tw+" work")
 
     elif do == "-sort":
-        print("1.sort as alphabet 2.revers")
-        sort_choice = input("enter the number of each item of the menu that you want: ")
+        if todo == []:
+            print("\nthe list is empty!\n")
 
-        if sort_choice == 1 or sort_choice == "sort as alphabet":
-            todo.sort()
+        else:
+            print("1.sort as alphabet 2.revers")
+            sort_choice = input("enter the number of each item of the menu that you want: ")
 
-        elif sort_choice == 2 or sort_choice == "revers":
-            todo.reverse()
+            if sort_choice == 1 or sort_choice == "sort as alphabet":
+                todo.sort()
+
+            elif sort_choice == 2 or sort_choice == "revers":
+                todo.reverse()
 
 
     else:
