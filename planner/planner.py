@@ -18,7 +18,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder || -sort for sort the list")
+        print("-re for set reminder || -sort for sort the list || -color for change the color of window")
 
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
@@ -29,7 +29,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder || -sort for sort the list")
+        print("-re for set reminder || -sort for sort the list || -color for change the color of window")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -220,6 +220,42 @@ while b:
             elif sort_choice == 2 or sort_choice == "revers":
                 todo.reverse()
 
+    elif do == "-color":
+        if my_os == "win":
+            print("color menu:")
+            print("0 = Black       8 = Gray")
+            print("1 = Blue        9 = Light Blue")
+            print("2 = Green       A = Light Green")
+            print("3 = Aqua        B = Light Aqua")
+            print("4 = Red         C = Light Red")
+            print("5 = Purple      D = Light Purple")
+            print("6 = Yellow      E = Light Yellow")
+            print("7 = White       F = Bright White")
+
+            color_menu = "0123456789ABCDEF"
+            color_menu = list(color_menu)
+
+            b_color = input("enter background color:")
+            b_color = b_color.upper()
+            b_color_valid = False
+
+            for i in color_menu:
+                if i == b_color:
+                    b_color_valid = True
+                    break
+
+            if b_color_valid:
+                f_color = input("enter foreground color:")
+                f_color = f_color.upper()
+                f_color_valid = False
+
+            for i in color_menu:
+                    if i == f_color:
+                        f_color_valid = True
+                        break
+
+            if b_color_valid and f_color_valid:
+                os.system("color "+b_color+f_color)
 
     else:
         todo.append(do)
