@@ -18,7 +18,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder")
+        print("-re for set reminder || -sort for sort the list")
 
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
@@ -29,7 +29,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder")
+        print("-re for set reminder || -sort for sort the list")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -205,6 +205,17 @@ while b:
                 time.sleep(1)
 
             print("it's the time of the do "+tw+" work")
+
+    elif do == "-sort":
+        print("1.sort as alphabet 2.revers")
+        sort_choice = input("enter the number of each item of the menu that you want: ")
+
+        if sort_choice == 1 or sort_choice == "sort as alphabet":
+            todo.sort()
+
+        elif sort_choice == 2 or sort_choice == "revers":
+            todo.reverse()
+
 
     else:
         todo.append(do)
