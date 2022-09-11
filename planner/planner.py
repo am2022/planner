@@ -3,6 +3,7 @@ import datetime
 from tqdm import tqdm
 import time
 from sys import platform
+import markdown
 
 t = datetime.datetime.now()
 year = t.year
@@ -19,6 +20,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
+        print("enter -html_o for output list in html")
 
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
@@ -30,6 +32,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
+        print("enter -html_o for output list in html")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -256,6 +259,20 @@ while b:
 
             if b_color_valid and f_color_valid:
                 os.system("color "+b_color+f_color)
+
+    elif do == "-html_o":
+        html_name = input("enter the name of html file(*.html):")
+
+        for i in range(len(todo)):
+            if i == 0:
+                md = "# list"
+            md += "\n* "+todo[i]
+
+        html = markdown.markdown(md)
+
+        with open(html_name, "w") as f_html:
+            f_html.write(html)
+            f_html.close()
 
     else:
         todo.append(do)
