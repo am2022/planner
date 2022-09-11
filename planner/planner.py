@@ -21,6 +21,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
         print("-html_o for output list in html || -md_o for output list in md(markdown)")
+        print("-txt_o for output list in txt file")
 
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
@@ -33,6 +34,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
         print("enter -html_o for output list in html || -md_o for output list in md(markdown)")
+        print("-txt_o for output list in txt file")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -287,6 +289,19 @@ while b:
         with open(md_name, "w") as f_md:
             f_md.write(md)
             f_md.close()
+
+    elif do == "-txt_o":
+        txt_name = input("enter the name of txt file(*.txt):")
+        txt = ""
+
+        for i in range(len(todo)):
+            if i == 0:
+                txt = "list"
+            txt += "\n\t*"+todo[i]
+
+        with open(txt_name, "w") as f_txt:
+            f_txt.write(txt)
+            f_txt.close()
 
     else:
         todo.append(do)
