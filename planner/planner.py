@@ -20,7 +20,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
-        print("enter -html_o for output list in html")
+        print("-html_o for output list in html || -md_o for output list in md(markdown)")
 
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
@@ -32,7 +32,7 @@ def show_option(u_os, term_color = "3f"):
         print("enter -count for count a work in list || enter -sort for sort the list")
         print("enter -clear for clear window || enter -hist for see history")
         print("-re for set reminder || -sort for sort the list || -color for change the color of window")
-        print("enter -html_o for output list in html")
+        print("enter -html_o for output list in html || -md_o for output list in md(markdown)")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -262,6 +262,7 @@ while b:
 
     elif do == "-html_o":
         html_name = input("enter the name of html file(*.html):")
+        md = ""
 
         for i in range(len(todo)):
             if i == 0:
@@ -273,6 +274,19 @@ while b:
         with open(html_name, "w") as f_html:
             f_html.write(html)
             f_html.close()
+
+    elif do == "-md_o":
+        md_name = input("enter the name of md file(*.md):")
+        md = ""
+
+        for i in range(len(todo)):
+            if i == 0:
+                md = "# list"
+            md += "\n* "+todo[i]
+
+        with open(md_name, "w") as f_md:
+            f_md.write(md)
+            f_md.close()
 
     else:
         todo.append(do)
