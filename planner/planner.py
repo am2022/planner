@@ -11,40 +11,44 @@ year = t.year
 month = t.month
 day = t.day
 
-def show_option(u_os, term_color = "3f"):
+def show_option(u_os, term_color = "3f", num_c = 1):
     if u_os == "linux" or u_os == "osx":
-        print(str(day)+" "+str(month)+" "+str(year))
+        if num_c == 1:
+            print(str(day)+" "+str(month)+" "+str(year))
 
-        planner_message = pyfiglet.figlet_format("planner")
+            planner_message = pyfiglet.figlet_format("planner")
 
-        print(planner_message)
+            print(planner_message)
 
-        print("welcome to planner")
-        print("enter -q for exit || enter -l for see list || enter -d for delete an item")
-        print("enter -del for delete all the list || enter -numl for number of a work in the list")
-        print("enter -count for count a work in list || enter -sort for sort the list")
-        print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder || -sort for sort the list || -color for change the color of window")
-        print("-html_o for output list in html || -md_o for output list in md(markdown)")
-        print("-txt_o for output list in txt file")
+        elif num_c == 2:
+            print("welcome to planner")
+            print("enter -q for exit || enter -l for see list || enter -d for delete an item")
+            print("enter -del for delete all the list || enter -numl for number of a work in the list")
+            print("enter -count for count a work in list || enter -sort for sort the list")
+            print("enter -clear for clear window || enter -hist for see history")
+            print("-re for set reminder || -sort for sort the list || -color for change the color of window")
+            print("-html_o for output list in html || -md_o for output list in md(markdown)")
+            print("-txt_o for output list in txt file")
 
     elif u_os == "win":
-        print(str(day)+" "+str(month)+" "+str(year))
+        if num_c == 1:
+            print(str(day)+" "+str(month)+" "+str(year))
 
-        os.system("color 3f")
+            os.system("color 3f")
 
-        planner_message = pyfiglet.figlet_format("planner")
+            planner_message = pyfiglet.figlet_format("planner")
 
-        print(planner_message)
+            print(planner_message)
 
-        print("welcome to planner")
-        print("enter -q for exit || enter -l for see list || enter -d for delete an item")
-        print("enter -del for delete all the list || enter -numl for number of a work in the list")
-        print("enter -count for count a work in list || enter -sort for sort the list")
-        print("enter -clear for clear window || enter -hist for see history")
-        print("-re for set reminder || -sort for sort the list || -color for change the color of window")
-        print("enter -html_o for output list in html || -md_o for output list in md(markdown)")
-        print("-txt_o for output list in txt file")
+        elif num_c == 2:
+            print("welcome to planner")
+            print("enter -q for exit || enter -l for see list || enter -d for delete an item")
+            print("enter -del for delete all the list || enter -numl for number of a work in the list")
+            print("enter -count for count a work in list || enter -sort for sort the list")
+            print("enter -clear for clear window || enter -hist for see history")
+            print("-re for set reminder || -sort for sort the list || -color for change the color of window")
+            print("enter -html_o for output list in html || -md_o for output list in md(markdown)")
+            print("-txt_o for output list in txt file")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
