@@ -342,6 +342,16 @@ while b:
             f_txt.write(txt)
             f_txt.close()
 
+    elif do == "-h":
+        if my_os == "linux" or my_os == "osx":
+            show_option("linux", num_c = 2)
+
+        elif my_os == "win":
+            show_option("win", num_c = 2)
+
+        else:
+            show_option("linux", num_c = 2)
+
     else:
         todo.append(do)
         f.write(do+"\n")
