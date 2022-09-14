@@ -20,6 +20,8 @@ def show_option(u_os, term_color = "3f", num_c = 1):
 
             print(planner_message)
 
+            print("enter -h for help")
+
         elif num_c == 2:
             print("welcome to planner")
             print("enter -q for exit || enter -l for see list || enter -d for delete an item")
@@ -28,7 +30,7 @@ def show_option(u_os, term_color = "3f", num_c = 1):
             print("enter -clear for clear window || enter -hist for see history")
             print("-re for set reminder || -sort for sort the list || -color for change the color of window")
             print("-html_o for output list in html || -md_o for output list in md(markdown)")
-            print("-txt_o for output list in txt file")
+            print("-txt_o for output list in txt file || enter -h for help")
 
     elif u_os == "win":
         if num_c == 1:
@@ -40,6 +42,8 @@ def show_option(u_os, term_color = "3f", num_c = 1):
 
             print(planner_message)
 
+            print("enter -h for help")
+
         elif num_c == 2:
             print("welcome to planner")
             print("enter -q for exit || enter -l for see list || enter -d for delete an item")
@@ -48,7 +52,7 @@ def show_option(u_os, term_color = "3f", num_c = 1):
             print("enter -clear for clear window || enter -hist for see history")
             print("-re for set reminder || -sort for sort the list || -color for change the color of window")
             print("enter -html_o for output list in html || -md_o for output list in md(markdown)")
-            print("-txt_o for output list in txt file")
+            print("-txt_o for output list in txt file || enter -h for help")
 
 def set_os():
     if platform == "linux" or platform == "linux2":
@@ -66,25 +70,17 @@ my_os = set_os()
 if my_os == "linux" or my_os == "osx":
     os.system("clear")
 
-    print(str(day)+" "+str(month)+" "+str(year))
+    show_option("linux")
 
 elif my_os == "win":
     os.system("cls")
 
-    os.system("color 3f")
-
-    print(str(day)+" "+str(month)+" "+str(year))
+    show_option("win")
 
 else:
     os.system("clear")
 
-    print(str(day)+" "+str(month)+" "+str(year))
-
-#show_option(my_os)
-
-planner_message = pyfiglet.figlet_format("planner")
-
-print(planner_message)
+    show_option("linux")
 
 f = open("history "+str(year),"a")
 
