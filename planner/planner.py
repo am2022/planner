@@ -15,6 +15,10 @@ def show_option(u_os, term_color = "3f"):
     if u_os == "linux" or u_os == "osx":
         print(str(day)+" "+str(month)+" "+str(year))
 
+        planner_message = pyfiglet.figlet_format("planner")
+
+        print(planner_message)
+
         print("welcome to planner")
         print("enter -q for exit || enter -l for see list || enter -d for delete an item")
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
@@ -25,6 +29,14 @@ def show_option(u_os, term_color = "3f"):
         print("-txt_o for output list in txt file")
 
     elif u_os == "win":
+        print(str(day)+" "+str(month)+" "+str(year))
+
+        os.system("color f3")
+
+        planner_message = pyfiglet.figlet_format("planner")
+
+        print(planner_message)
+
         print("welcome to planner")
         print("enter -q for exit || enter -l for see list || enter -d for delete an item")
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
