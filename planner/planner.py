@@ -31,7 +31,7 @@ def show_option(u_os, term_color = "3f"):
     elif u_os == "win":
         print(str(day)+" "+str(month)+" "+str(year))
 
-        os.system("color f3")
+        os.system("color 3f")
 
         planner_message = pyfiglet.figlet_format("planner")
 
@@ -175,7 +175,20 @@ while b:
                 todo.reverse()
 
     elif do == "-clear":
-        os.system("cls")
+        if my_os == "linux" or my_os == "osx":
+            os.system("clear")
+
+            show_option("linux")
+
+        elif my_os == "win":
+            os.system("cls")
+
+            show_option("win")
+
+        else:
+            os.system("clear")
+
+            show_option("linux")
 
     elif do == "-hist":
         u_year_true = True
