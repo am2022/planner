@@ -56,7 +56,7 @@ elif my_os == "win":
     os.system("cls")
 
 else:
-    os_system("clear")
+    os.system("clear")
 
 show_option(my_os)
 
