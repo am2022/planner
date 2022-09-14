@@ -25,9 +25,6 @@ def show_option(u_os, term_color = "3f"):
         print("-txt_o for output list in txt file")
 
     elif u_os == "win":
-        print(str(day)+" "+str(month)+" "+str(year))
-        os.system("color 3f")
-
         print("welcome to planner")
         print("enter -q for exit || enter -l for see list || enter -d for delete an item")
         print("enter -del for delete all the list || enter -numl for number of a work in the list")
@@ -53,11 +50,19 @@ my_os = set_os()
 if my_os == "linux" or my_os == "osx":
     os.system("clear")
 
+    print(str(day)+" "+str(month)+" "+str(year))
+
 elif my_os == "win":
     os.system("cls")
 
+    os.system("color 3f")
+
+    print(str(day)+" "+str(month)+" "+str(year))
+
 else:
     os.system("clear")
+
+    print(str(day)+" "+str(month)+" "+str(year))
 
 #show_option(my_os)
 
