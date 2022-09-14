@@ -4,6 +4,7 @@ from tqdm import tqdm
 import time
 from sys import platform
 import markdown
+import pyfiglet
 
 t = datetime.datetime.now()
 year = t.year
