@@ -59,7 +59,11 @@ elif my_os == "win":
 else:
     os.system("clear")
 
-show_option(my_os)
+#show_option(my_os)
+
+planner_message = pyfiglet.figlet_format("planner")
+
+print(planner_message)
 
 f = open("history "+str(year),"a")
 
